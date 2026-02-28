@@ -39,7 +39,7 @@ const Card = (props: CardProps) => {
         </div>
         <div style={{ textAlign: "center" }}>
           <img src={QRSampleImg} alt="QR code" width={80} height={80} />
-          <a href="https://github.com/rahuldkjain" className="know-more">
+          <a href="https://github.com/shaiksayeed" className="know-more">
             know more
           </a>
         </div>

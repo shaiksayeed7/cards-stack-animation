@@ -6,8 +6,8 @@ import Copyright from "./components/Copyright";
 import "./App.css";
 
 const springConfig = {
-  tension: 350,
-  friction: 60,
+  tension: 280,
+  friction: 36,
   precision: 0.001,
   velocity: 0.001,
   clamp: true,
@@ -26,7 +26,7 @@ const POSITION_MULTIPLIER_CONFIG = {
 };
 
 const CARD_STACK_MARGIN = 80;
-const DURATION = 300;
+const DURATION = 420;
 const CARD_HEIGHT = 256;
 const BASE_Z_INDEX = 9;
 
@@ -66,15 +66,15 @@ function App() {
             rotateZ: idx === CARDS.length - 1 ? -3 : idx % 2 ? -1 : 1,
             zIndex: idx + BASE_Z_INDEX,
             immediate: (key: string) => key === "zIndex",
-            delay: DURATION * 0.7,
-            config: { ...config.gentle },
+            delay: DURATION * 0.6,
+            config: { tension: 200, friction: 28 },
           });
           await animate({
             y: idx * CARD_STACK_MARGIN,
             rotateZ: 0,
             zIndex: idx + BASE_Z_INDEX,
             immediate: (key: string) => key === "zIndex",
-            config: { duration: DURATION * 0.1 },
+            config: { tension: 180, friction: 24 },
           });
         },
         immediate: (key: string) => key === "zIndex",
@@ -99,10 +99,7 @@ function App() {
           height: `${getWrapperHeight()}px`,
         });
       },
-      config: {
-        ...springConfig,
-        duration: DURATION,
-      },
+      config: springConfig,
     });
   };
 
