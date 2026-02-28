@@ -1,6 +1,7 @@
-.know-more {
+.card-link {
   font-size: smaller;
   pointer-events: none;
+  color: #1a5fb4;
 }
 .card-container {
   position: relative;

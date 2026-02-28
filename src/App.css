@@ -5,7 +5,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.App {
+.app-root {
   box-sizing: border-box;
   width: 100vw;
   height: 100vh;
@@ -16,7 +16,7 @@ a:hover {
   background-attachment: fixed;
 }
 
-.phone-container {
+.card-viewport {
   width: 100%;
   max-width: 576px;
   min-width: 260px;
@@ -31,13 +31,13 @@ a:hover {
   position: relative;
 }
 
-.wrapper {
+.stack-wrapper {
   width: 60%;
   min-width: 260px;
   position: relative;
   transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.copyright {
+.footer-badge {
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -53,8 +53,8 @@ a:hover {
   color: black;
   transition: all 0.3s ease;
 }
-.developer {
-  color: dodgerblue;
+.footer-badge .author {
+  color: var(--glassy-primary, #1a5fb4);
   margin-right: 10px;
   font-weight: 500;
 }

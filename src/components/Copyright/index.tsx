@@ -3,14 +3,14 @@ import React from "react";
 const Copyright = () => {
   return (
     <a
-      href="https://github.com/shaiksayeed"
+      href="https://github.com/shaiksayeed7"
       target="_blank"
       rel="noreferrer"
       className="copyright-container"
     >
-      <div className="copyright">
+      <div className="footer-badge">
         <div>
-          developed by <span className="developer">Shaik Sayeed</span>
+          developed by <span className="author">Shaik Sayeed</span>
         </div>
         <div>
           <img

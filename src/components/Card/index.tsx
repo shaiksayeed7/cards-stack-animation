@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import QRSampleImg from "../../constants/assets/qr-sample.png";
 
-interface CardProps {
+interface GlassCardProps {
   card: {
     source: string;
     destination: string;
@@ -13,7 +13,7 @@ interface CardProps {
     meta: Array<{ title: string; subtitle: string }>;
   };
 }
-const Card = (props: CardProps) => {
+const GlassCard = (props: GlassCardProps) => {
   const { card } = props;
 
   return (
@@ -39,8 +39,8 @@ const Card = (props: CardProps) => {
         </div>
         <div style={{ textAlign: "center" }}>
           <img src={QRSampleImg} alt="QR code" width={80} height={80} />
-          <a href="https://github.com/shaiksayeed" className="know-more">
-            know more
+          <a href="https://github.com/shaiksayeed7" className="card-link">
+            view details
           </a>
         </div>
       </div>
@@ -61,4 +61,4 @@ const Card = (props: CardProps) => {
   );
 };
 
-export default Card;
+export default GlassCard;

@@ -1,3 +1,7 @@
+/**
+ * Glassy Card Stack - Entry Point
+ * Renders the main App component into the DOM
+ */
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";

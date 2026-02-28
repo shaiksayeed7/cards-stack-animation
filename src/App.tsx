@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import { useSpring, animated, useSprings, config } from "react-spring";
-import BillCard from "./components/Card";
+import { useSpring, animated, useSprings } from "react-spring";
+import GlassCard from "./components/Card";
 import { CARDS } from "./constants/common";
-import Copyright from "./components/Copyright";
+import Footer from "./components/Copyright";
 import "./App.css";
 
 const springConfig = {
@@ -54,7 +54,7 @@ function App() {
   const [wrapperSpring, setWrapperSpring] = useSpring(() => ({
     height: `${getWrapperHeight()}px`,
   }));
-  const [billCardSprings, setBillCardSprings] = useSprings(
+  const [cardSprings, setCardSprings] = useSprings(
     CARDS.length,
     (index) => {
       const idx = order.current.indexOf(index);
@@ -121,14 +121,14 @@ function App() {
     };
   };
 
-  const handleClick = (cardIndex: number) => {
+  const handleCardClick = (cardIndex: number) => {
     // click animation logic
     const index = order.current.indexOf(cardIndex);
     if (index < CARDS.length - 1) {
       const orderDetails = handleOrder(index);
       resizeWrapper();
-      setBillCardSprings.stop();
-      setBillCardSprings.start((itemIndex) => {
+      setCardSprings.stop();
+      setCardSprings.start((itemIndex) => {
         const newIndex = orderDetails.getNewOrderIndex(itemIndex);
         const oldIndex = orderDetails.getOldOrderIndex(itemIndex);
 
@@ -251,25 +251,25 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="phone-container">
-        <animated.div style={wrapperSpring} className="wrapper">
-          {billCardSprings.map((styles, index) => (
+    <div className="app-root">
+      <div className="card-viewport">
+        <animated.div style={wrapperSpring} className="stack-wrapper">
+          {cardSprings.map((styles, index) => (
             <animated.div
               style={{
                 ...styles,
                 position: "absolute",
                 width: "100%",
               }}
-              onClick={() => handleClick(index)}
+              onClick={() => handleCardClick(index)}
               key={"card-" + index}
             >
-              <BillCard card={CARDS[index]} />
+              <GlassCard card={CARDS[index]} />
             </animated.div>
           ))}
         </animated.div>
       </div>
-      <Copyright />
+      <Footer />
     </div>
   );
 }
